@@ -14,6 +14,7 @@ const users = [
   { id: 10, name: "Padmé Amidala", age: 27 },
 ];
 
+//Created broken data to test for error handling
 const errorUsers = [
   { id: 11, name: "Boba Fett", age: 50 },                             
   { id: 12, name: "", age: 19 },
@@ -96,6 +97,8 @@ usersUnderThirty(users, "age-filter-list", 30);
 // 5. Add error handling to your functions that will log an error message using console.error() if any object doesn't have a "name" property. Display any error messages in the div with id "error-messages"
 renderUserList(users, "error-handling-list", "error-messages");
 
+
 // 6. Test your error handling by creating a second array that's intentionally broken (missing name properties) and passing it to your functions. Verify that your error handling works correctly and displays errors in the div with id "broken-array-errors"
 
 renderUserList(errorUsers, "broken-array-list", "broken-array-errors");
+//Added error hand;ing for 5 & 6 to question 3
