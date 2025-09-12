@@ -2,7 +2,7 @@
 
 // sample data - expanded Star Wars characters with varied ages
 const users = [
-  { id: 1, name: "Luke Skywalker" age: 23 },
+  { id: 1, name: "Luke Skywalker", age: 23 },
   { id: 2, name: "Darth Vader", age: 45 },
   { id: 3, name: "Princess Leia", age: 23 },
   { id: 4, name: "Obi-Wan Kenobi", age: 57 },
@@ -18,7 +18,28 @@ const users = [
 
 // 1. Print out the names of each character in the console, then render them in the HTML list with id "names-list"
 
+const userList = document.getElementById("names-list");
+
+users.forEach(user => {
+  console.log(`Name: ${user.name}`);
+  const li = document.createElement("li");
+  li.textContent = user.name;
+  userList.appendChild(li);
+});
+
+
 // 2. Print out the names of characters whose age is less than 40 in the console, then render them in the HTML list with id "young-characters-list"
+const youngUserList = document.getElementById("young-characters-list");
+const maxAge = 40;
+const usersLessThanAge = users.filter(user => user.age < maxAge);
+
+usersLessThanAge.forEach(user => {
+  console.log(`${user.name}`);
+  const li = document.createElement("li");
+  li.textContent = `${user.name}`;
+  youngUserList.appendChild(li);
+});
+
 
 // 3. Create a reusable function that takes any array and uses logic to render a list of character names in the HTML. Use this function to populate the list with id "function-list"
 
